@@ -38,7 +38,6 @@
 				$return["timestamp"] = $row["order_timestamp"];
 				$return["price"] = $row["order_price"];
 
-				$return["store"]["id"] = $row["store_id"];
 				$return["store"]["name"] = $row["store_name"];
 				$return["store"]["street"] = $row["store_street"];
 				$return["store"]["home_number"] = $row["store_home_number"];
@@ -51,10 +50,11 @@
 				$tempProduct = [];
 
 
-				$tempProduct["id"] = (int) $row["id"];
-				$tempProduct["name"] = $row["name"];
-				$tempProduct["description"] = $row["description"];
-				$tempProduct["icon"] = $row["icon"];
+				$tempProduct["id"] = (int) $row["product_id"];
+				$tempProduct["code"] = $row["product_code"];
+				$tempProduct["name"] = $row["product_name"];
+				$tempProduct["price"] = $row["product_price"];
+				$tempProduct["date"] = $row["product_expiration_date"];
 				array_push($return["products"], $tempProduct);
 			}
 		} else {
