@@ -36,7 +36,7 @@
 			while($row = $result->fetch_assoc()) {
 				$return["id"] = (int) $row["order_id"];
 				$return["timestamp"] = $row["order_timestamp"];
-				$return["price"] = $row["order_price"];
+				$return["price"] = (int) $row["order_price"];
 
 				$return["store"]["name"] = $row["store_name"];
 				$return["store"]["street"] = $row["store_street"];
@@ -45,7 +45,7 @@
 				$return["store"]["city"] = $row["store_city"];
 				$return["store"]["phone"] = $row["store_phone"];
 
-				$return["store"]["seller"]["id"] = $row["seller_id"];
+				$return["store"]["seller"]["id"] = (int) $row["seller_id"];
 				$return["store"]["seller"]["name"] = $row["seller_name"];
 				$tempProduct = [];
 
@@ -53,7 +53,7 @@
 				$tempProduct["id"] = (int) $row["product_id"];
 				$tempProduct["code"] = $row["product_code"];
 				$tempProduct["name"] = $row["product_name"];
-				$tempProduct["price"] = $row["product_price"];
+				$tempProduct["price"] = (int) $row["product_price"];
 				$tempProduct["date"] = $row["product_expiration_date"];
 				array_push($return["products"], $tempProduct);
 			}
