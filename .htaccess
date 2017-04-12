@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on
+
+	RewriteRule ^getOrder/?$ getOrder.php
+	RewriteRule ^getOrder/([0-9]+)/?$ getOrder.php?id=$1
+</IfModule>
