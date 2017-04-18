@@ -3,4 +3,5 @@
 
 	RewriteRule ^getOrder/?$ getOrder.php
 	RewriteRule ^getOrder/([0-9]+)/?$ getOrder.php?id=$1
+	RewriteRule ^getOrder/?\?id=([0-9]+)/?$ getOrder.php?id=$1
 </IfModule>

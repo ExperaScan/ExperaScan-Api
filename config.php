@@ -1,4 +1,5 @@
 <?php
+	error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	//Database configuration
 	define("DB_SERVER", "localhost");
 	define("DB_NAME", "0894225");
