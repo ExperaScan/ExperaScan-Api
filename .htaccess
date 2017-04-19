@@ -4,4 +4,10 @@
 	RewriteRule ^getOrder/?$ getOrder.php
 	RewriteRule ^getOrder/([0-9]+)/?$ getOrder.php?id=$1
 	RewriteRule ^getOrder/?\?id=([0-9]+)/?$ getOrder.php?id=$1
+
+	RewriteRule ^postOrder/?$ postOrder.php
+
+	RewriteRule ^getProduct/?$ getProduct.php
+	RewriteRule ^getProduct/([0-9,\-]+)/?$ getProduct.php?code=$1
+	RewriteRule ^getProduct/?\?code=([0-9\-]+)/?$ getProduct.php?code=$1
 </IfModule>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 12 apr 2017 om 15:34
+-- Gegenereerd op: 19 apr 2017 om 14:13
 -- Serverversie: 10.1.13-MariaDB
 -- PHP-versie: 5.6.23
 
@@ -48,15 +48,17 @@ INSERT INTO `es_orders` (`id`, `timestamp`, `total_price`, `seller_id`) VALUES
 
 CREATE TABLE `es_order_has_products` (
   `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL
+  `product_id` int(11) NOT NULL,
+  `product_expiration_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `es_order_has_products`
 --
 
-INSERT INTO `es_order_has_products` (`order_id`, `product_id`) VALUES
-(1, 1);
+INSERT INTO `es_order_has_products` (`order_id`, `product_id`, `product_expiration_date`) VALUES
+(1, 1, '2017-07-31'),
+(1, 2, '2017-04-21');
 
 -- --------------------------------------------------------
 
@@ -68,16 +70,16 @@ CREATE TABLE `es_products` (
   `id` int(11) NOT NULL,
   `product_code` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `price` int(11) NOT NULL,
-  `expiration_date` date NOT NULL
+  `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `es_products`
 --
 
-INSERT INTO `es_products` (`id`, `product_code`, `name`, `price`, `expiration_date`) VALUES
-(1, 54491472, 'Coca Cola Fles 500ml', 149, '2017-07-31');
+INSERT INTO `es_products` (`id`, `product_code`, `name`, `price`) VALUES
+(1, 54491472, 'Coca Cola Fles 500ml', 149),
+(2, 2147483647, '2147483647', 149);
 
 -- --------------------------------------------------------
 
@@ -163,7 +165,7 @@ ALTER TABLE `es_orders`
 -- AUTO_INCREMENT voor een tabel `es_products`
 --
 ALTER TABLE `es_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT voor een tabel `es_sellers`
 --

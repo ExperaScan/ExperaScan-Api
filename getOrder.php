@@ -10,7 +10,7 @@
 		`es_products`.`product_code` AS `product_code`, 
 		`es_products`.`name` AS `product_name`, 
 		`es_products`.`price` AS `product_price`, 
-		`es_products`.`expiration_date` AS `product_expiration_date`, 
+		`es_order_has_products`.`product_expiration_date` AS `product_expiration_date`, 
 		`es_orders`.`id` AS `order_id`, 
 		`es_orders`.`timestamp` AS `order_timestamp`, 
 		`es_orders`.`total_price` AS `order_price`, 
