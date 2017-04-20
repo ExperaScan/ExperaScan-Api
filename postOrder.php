@@ -3,7 +3,6 @@
 	
 	$return = [];
 	$return["orderId"] = 0;
-
 	if(isset($_POST["products"]) && isset($_POST["price"]) && isset($_POST["seller_id"])) {
 		$products = json_decode($_POST["products"]);
 
@@ -13,7 +12,7 @@
 		$orderId = $APIDB->query($sql, true);
 
 		if($orderId) {
-			$insertSQL = "INSERT INTO `es_order_has_products` (`order_id`, `product_id`, `product_expiration_date`) VALUES ('2', '1', '2017-04-19'), ('2', '2', '2017-04-19');";
+			$insertSQL = "INSERT INTO `es_order_has_products` (`order_id`, `product_id`, `product_expiration_date`) VALUES ";
 
 			foreach ($products as $key => $product) {
 				if($key > 0) {
