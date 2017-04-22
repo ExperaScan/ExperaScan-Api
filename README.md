@@ -1,5 +1,10 @@
 # README #
 
+## INSTALLATION ##
+
+To install, change the database configuration in config.php
+and upload the database.sql to your own database.
+
 ## HTACCESS ##
 
 The htaccess removes the .php extension from the url's.
